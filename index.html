@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AURA & CO. - Modern, sustainable fashion for Men, Women, and Kids. Discover curated clothing, shoes, and luxury accessories.">
+  <meta name="keywords" content="clothing store, fashion, ecommerce, men clothes, women dresses, shoes, accessories, modern style">
+  <meta name="author" content="AURA & CO.">
+  <title>AURA & CO. | Contemporary Apparel & Lifestyle</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+</head>
+<body>
+
+  <!-- ==============================================
+       1. TOP PROMOTION & ANNOUNCEMENT BAR
+  ============================================== -->
+  <div class="announcement-bar" role="region" aria-label="Announcement">
+    <div class="container announcement-content">
+      <div class="announcement-text">
+        <i class="fa-solid fa-sparkles"></i>
+        <span>Mid-Season Sale: Enjoy <strong>20% OFF</strong> with code <span class="promo-code-badge" id="copy-promo-btn" title="Click to copy code">STYLE20</span> &bull; Free Global Shipping on Orders over $75</span>
+      </div>
+      <div class="announcement-actions">
+        <div class="theme-switch-wrapper">
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark Mode" title="Toggle Dark/Light Mode">
+            <i class="fa-solid fa-moon"></i>
+            <span class="theme-mode-text">Dark Mode</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================================
+       2. HEADER & NAVIGATION
+  ============================================== -->
+  <header class="header" id="main-header">
+    <div class="container header-container">
+      <!-- Mobile Menu Toggle Button -->
+      <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <i class="fa-solid fa-bars-staggered"></i>
+      </button>
+
+      <!-- Brand Logo -->
+      <a href="#home" class="brand-logo" aria-label="AURA and CO. Home">
+        <span class="logo-mark">A</span>
+        <span class="logo-text">AURA <em>&amp;</em> CO.</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="primary-navigation" aria-label="Main Navigation">
+        <div class="mobile-nav-header">
+          <span class="mobile-nav-title">Menu</span>
+          <button class="mobile-nav-close" id="mobile-menu-close" aria-label="Close navigation menu">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#home" class="nav-link active" data-nav="home">Home</a></li>
+          <li class="nav-item"><a href="#shop" class="nav-link" data-category="all">Shop All</a></li>
+          <li class="nav-item"><a href="#shop" class="nav-link" data-category="men">Men</a></li>
+          <li class="nav-item"><a href="#shop" class="nav-link" data-category="women">Women</a></li>
+          <li class="nav-item"><a href="#shop" class="nav-link" data-category="kids">Kids</a></li>
+          <li class="nav-item"><a href="#shop" class="nav-link" data-category="shoes">Shoes</a></li>
+          <li class="nav-item"><a href="#shop" class="nav-link" data-category="accessories">Accessories</a></li>
+          <li class="nav-item"><a href="#shop" class="nav-link sale-link" data-category="sale"><i class="fa-solid fa-bolt"></i> Sale</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link" data-nav="about">About</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link" data-nav="contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Action Icons -->
+      <div class="header-actions">
+        <!-- Live Search Bar Trigger / Desktop Search Input -->
+        <div class="search-box-wrapper" id="search-box-wrapper">
+          <div class="search-input-group">
+            <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
+            <input type="text" id="global-search-input" placeholder="Search jackets, shirts, sneakers..." aria-label="Search products" autocomplete="off">
+            <button id="clear-search-btn" class="clear-search-btn" aria-label="Clear search" style="display: none;">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <!-- Live Search Autocomplete Dropdown -->
+          <div class="search-results-dropdown" id="search-results-dropdown" style="display: none;">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+
+        <!-- Wishlist Button with Badge -->
+        <button class="action-btn wishlist-btn" id="wishlist-toggle-btn" aria-label="View Wishlist" title="View Wishlist">
+          <i class="fa-regular fa-heart"></i>
+          <span class="badge" id="wishlist-badge">0</span>
+        </button>
+
+        <!-- Cart Button with Badge -->
+        <button class="action-btn cart-btn" id="cart-toggle-btn" aria-label="View Shopping Cart" title="View Shopping Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="badge" id="cart-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay for Drawer / Nav -->
+  <div class="backdrop-overlay" id="backdrop-overlay"></div>
+
+  <main id="main-content">
+    <!-- ==============================================
+         3. HERO BANNER WITH SLIDER
+    ============================================== -->
+    <section class="hero-section" id="home" aria-label="Featured Collections Carousel">
+      <div class="hero-slider" id="hero-slider">
+        <!-- Slide 1 -->
+        <div class="hero-slide active" data-index="0" style="background-image: linear-gradient(rgba(18, 18, 18, 0.45), rgba(18, 18, 18, 0.65)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1920&q=80');">
+          <div class="container hero-content">
+            <span class="hero-subtitle"><i class="fa-solid fa-sparkles"></i> Autumn &amp; Winter Collection 2026</span>
+            <h1 class="hero-title">Timeless Elegance &amp; Effortless Silhouette</h1>
+            <p class="hero-desc">Curated essentials crafted from ethically sourced cashmere, organic cotton, and tailored wool for everyday luxury.</p>
+            <div class="hero-cta-group">
+              <a href="#shop" class="btn btn-primary btn-lg" data-category="all">
+                Shop Collection <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="#shop" class="btn btn-outline-light btn-lg" data-category="sale">
+                Explore Sale &bull; Up to 40% Off
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="hero-slide" data-index="1" style="background-image: linear-gradient(rgba(18, 18, 18, 0.45), rgba(18, 18, 18, 0.65)), url('https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=1920&q=80');">
+          <div class="container hero-content">
+            <span class="hero-subtitle"><i class="fa-solid fa-fire"></i> New Arrivals for Men</span>
+            <h2 class="hero-title">Modern Tailoring &amp; City Layering</h2>
+            <p class="hero-desc">From tailored blazers to classic Oxford shirts and premium Japanese denim, elevate your wardrobe today.</p>
+            <div class="hero-cta-group">
+              <a href="#shop" class="btn btn-primary btn-lg" data-category="men">
+                Shop Men's Line <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="#shop" class="btn btn-outline-light btn-lg" data-category="shoes">
+                Handcrafted Footwear
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="hero-slide" data-index="2" style="background-image: linear-gradient(rgba(18, 18, 18, 0.45), rgba(18, 18, 18, 0.65)), url('https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1920&q=80');">
+          <div class="container hero-content">
+            <span class="hero-subtitle"><i class="fa-solid fa-gem"></i> Modern Women &amp; Accessories</span>
+            <h2 class="hero-title">Flowing Silhouettes &amp; Statement Accents</h2>
+            <p class="hero-desc">Discover our signature silk midi dresses, structured coats, handcrafted leather bags, and minimal jewelry.</p>
+            <div class="hero-cta-group">
+              <a href="#shop" class="btn btn-primary btn-lg" data-category="women">
+                Shop Women's Line <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="#shop" class="btn btn-outline-light btn-lg" data-category="accessories">
+                Leather Goods &amp; Accents
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel Navigation Buttons -->
+      <button class="slider-btn slider-prev" id="slider-prev-btn" aria-label="Previous Slide">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <button class="slider-btn slider-next" id="slider-next-btn" aria-label="Next Slide">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+
+      <!-- Carousel Dot Indicators -->
+      <div class="slider-indicators" id="slider-indicators" role="tablist">
+        <button class="indicator-dot active" data-slide="0" aria-label="Slide 1"></button>
+        <button class="indicator-dot" data-slide="1" aria-label="Slide 2"></button>
+        <button class="indicator-dot" data-slide="2" aria-label="Slide 3"></button>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         4. TRUST & FEATURE BADGES
+    ============================================== -->
+    <section class="trust-features-section" aria-label="Store Benefits">
+      <div class="container">
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
+            <div class="feature-text">
+              <h4>Free Express Shipping</h4>
+              <p>On all domestic &amp; global orders over $75</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fa-solid fa-rotate-left"></i></div>
+            <div class="feature-text">
+              <h4>30-Day Hassle-Free Returns</h4>
+              <p>Simple exchanges and immediate store credit</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="feature-text">
+              <h4>100% Secure Checkout</h4>
+              <p>Encrypted 256-bit bank level SSL payments</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
+            <div class="feature-text">
+              <h4>24/7 Dedicated Styling</h4>
+              <p>Live chat support with personalized advice</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         5. FEATURED CATEGORIES GRID
+    ============================================== -->
+    <section class="categories-section" id="categories" aria-label="Featured Categories">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Curated Collections</span>
+          <h2 class="section-title">Shop by Category</h2>
+          <p class="section-subtitle">Designed for every moment, mood, and family member.</p>
+        </div>
+
+        <div class="categories-grid">
+          <!-- Men -->
+          <div class="category-card" data-category="men" role="button" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=600&q=80" alt="Men's Collection" loading="lazy">
+            <div class="category-overlay">
+              <span class="category-count">7 Essentials</span>
+              <h3 class="category-name">Men's Wardrobe</h3>
+              <p class="category-subtext">Shirts, Denim, Outerwear &amp; Suits</p>
+              <span class="category-link-text">Shop Now <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+
+          <!-- Women -->
+          <div class="category-card" data-category="women" role="button" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80" alt="Women's Collection" loading="lazy">
+            <div class="category-overlay">
+              <span class="category-count">7 Essentials</span>
+              <h3 class="category-name">Women's Edit</h3>
+              <p class="category-subtext">Dresses, Trench Coats, Knits &amp; Skirts</p>
+              <span class="category-link-text">Shop Now <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+
+          <!-- Kids -->
+          <div class="category-card" data-category="kids" role="button" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=600&q=80" alt="Kids' Collection" loading="lazy">
+            <div class="category-overlay">
+              <span class="category-count">6 Essentials</span>
+              <h3 class="category-name">Kids &amp; Junior</h3>
+              <p class="category-subtext">Organic Cotton, Playwear &amp; Warm Layers</p>
+              <span class="category-link-text">Shop Now <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+
+          <!-- Shoes -->
+          <div class="category-card" data-category="shoes" role="button" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=600&q=80" alt="Shoes & Footwear" loading="lazy">
+            <div class="category-overlay">
+              <span class="category-count">7 Essentials</span>
+              <h3 class="category-name">Footwear</h3>
+              <p class="category-subtext">Sneakers, Chelsea Boots &amp; Summer Slides</p>
+              <span class="category-link-text">Shop Now <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+
+          <!-- Accessories -->
+          <div class="category-card" data-category="accessories" role="button" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1523779917675-b6ed3a42a561?auto=format&fit=crop&w=600&q=80" alt="Accessories" loading="lazy">
+            <div class="category-overlay">
+              <span class="category-count">7 Essentials</span>
+              <h3 class="category-name">Accessories</h3>
+              <p class="category-subtext">Leather Bags, Cashmere Scarves &amp; Hats</p>
+              <span class="category-link-text">Shop Now <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+
+          <!-- Sale / Special -->
+          <div class="category-card highlight-card" data-category="sale" role="button" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=600&q=80" alt="Special Sale Collection" loading="lazy">
+            <div class="category-overlay">
+              <span class="category-badge-sale">Up to 40% OFF</span>
+              <h3 class="category-name">Seasonal Sale</h3>
+              <p class="category-subtext">Limited edition archive picks &amp; promotions</p>
+              <span class="category-link-text">View Deals <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         6. PRODUCT CATALOG & FILTERS SECTION
+    ============================================== -->
+    <section class="shop-section" id="shop" aria-label="Product Catalog">
+      <div class="container">
+        <!-- Section Top Controls Bar -->
+        <div class="shop-toolbar">
+          <div class="toolbar-left">
+            <h2 class="shop-title" id="shop-catalog-title">All Products</h2>
+            <span class="product-count-label" id="product-count-label">Showing 34 items</span>
+          </div>
+
+          <div class="toolbar-right">
+            <!-- Mobile Filters Toggle -->
+            <button class="btn btn-outline filter-drawer-toggle" id="mobile-filter-btn" aria-label="Open Filter Options">
+              <i class="fa-solid fa-sliders"></i> Filters <span id="active-filter-pill-count"></span>
+            </button>
+
+            <!-- Sort By Select -->
+            <div class="sort-selector-wrapper">
+              <label for="sort-select" class="sort-label">Sort by:</label>
+              <select id="sort-select" class="sort-select" aria-label="Sort products">
+                <option value="featured">Featured &bull; Staff Picks</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="rating">Customer Rating</option>
+                <option value="newest">Newest Arrivals</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Active Filter Tags Container -->
+        <div class="active-filter-chips" id="active-filter-chips">
+          <!-- Dynamically populated tags with removal buttons -->
+        </div>
+
+        <div class="shop-layout">
+          <!-- ========================
+               FILTER SIDEBAR
+          ========================= -->
+          <aside class="shop-sidebar" id="shop-sidebar" aria-label="Filter products">
+            <div class="sidebar-header">
+              <h3 class="sidebar-title"><i class="fa-solid fa-filter"></i> Filters</h3>
+              <button class="btn-text reset-filters-btn" id="reset-filters-btn">Reset All</button>
+              <button class="sidebar-close-btn" id="sidebar-close-btn" aria-label="Close filters">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+
+            <!-- Filter: Category -->
+            <div class="filter-group">
+              <h4 class="filter-heading">Category</h4>
+              <ul class="filter-list category-filter-list">
+                <li>
+                  <button class="category-filter-btn active" data-category="all">
+                    <span>All Products</span>
+                    <span class="count-tag" id="count-all">34</span>
+                  </button>
+                </li>
+                <li>
+                  <button class="category-filter-btn" data-category="men">
+                    <span>Men</span>
+                    <span class="count-tag" id="count-men">7</span>
+                  </button>
+                </li>
+                <li>
+                  <button class="category-filter-btn" data-category="women">
+                    <span>Women</span>
+                    <span class="count-tag" id="count-women">7</span>
+                  </button>
+                </li>
+                <li>
+                  <button class="category-filter-btn" data-category="kids">
+                    <span>Kids</span>
+                    <span class="count-tag" id="count-kids">6</span>
+                  </button>
+                </li>
+                <li>
+                  <button class="category-filter-btn" data-category="shoes">
+                    <span>Shoes</span>
+                    <span class="count-tag" id="count-shoes">7</span>
+                  </button>
+                </li>
+                <li>
+                  <button class="category-filter-btn" data-category="accessories">
+                    <span>Accessories</span>
+                    <span class="count-tag" id="count-accessories">7</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Filter: Special Collections (Sale / New) -->
+            <div class="filter-group">
+              <h4 class="filter-heading">Special Tags</h4>
+              <div class="checkbox-group">
+                <label class="custom-checkbox">
+                  <input type="checkbox" id="filter-sale" value="sale">
+                  <span class="checkbox-box"></span>
+                  <span class="checkbox-label"><i class="fa-solid fa-tag text-accent"></i> On Sale Only</span>
+                </label>
+                <label class="custom-checkbox">
+                  <input type="checkbox" id="filter-new" value="new">
+                  <span class="checkbox-box"></span>
+                  <span class="checkbox-label"><i class="fa-solid fa-star text-warning"></i> New Arrivals</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Filter: Price Range -->
+            <div class="filter-group">
+              <div class="filter-heading-flex">
+                <h4 class="filter-heading">Max Price</h4>
+                <span class="price-value-indicator" id="price-value-indicator">$300</span>
+              </div>
+              <input type="range" id="price-slider" min="20" max="300" step="5" value="300" class="price-slider" aria-label="Maximum price slider">
+              <div class="price-limits">
+                <span>$20</span>
+                <span>$300</span>
+              </div>
+            </div>
+
+            <!-- Filter: Size -->
+            <div class="filter-group">
+              <h4 class="filter-heading">Size</h4>
+              <div class="size-swatches" id="size-filters">
+                <button type="button" class="size-pill" data-size="XS">XS</button>
+                <button type="button" class="size-pill" data-size="S">S</button>
+                <button type="button" class="size-pill" data-size="M">M</button>
+                <button type="button" class="size-pill" data-size="L">L</button>
+                <button type="button" class="size-pill" data-size="XL">XL</button>
+                <button type="button" class="size-pill" data-size="XXL">XXL</button>
+              </div>
+            </div>
+
+            <!-- Filter: Color -->
+            <div class="filter-group">
+              <h4 class="filter-heading">Color</h4>
+              <div class="color-swatches" id="color-filters">
+                <button type="button" class="color-swatch-btn" data-color="Black" style="--swatch-color: #1a1a1a;" title="Black" aria-label="Filter Black"></button>
+                <button type="button" class="color-swatch-btn" data-color="White" style="--swatch-color: #ffffff; border: 1px solid #d1d5db;" title="White" aria-label="Filter White"></button>
+                <button type="button" class="color-swatch-btn" data-color="Navy" style="--swatch-color: #1e3a8a;" title="Navy" aria-label="Filter Navy"></button>
+                <button type="button" class="color-swatch-btn" data-color="Beige" style="--swatch-color: #d6c7b2;" title="Beige" aria-label="Filter Beige"></button>
+                <button type="button" class="color-swatch-btn" data-color="Olive" style="--swatch-color: #556b2f;" title="Olive" aria-label="Filter Olive"></button>
+                <button type="button" class="color-swatch-btn" data-color="Brown" style="--swatch-color: #78350f;" title="Brown" aria-label="Filter Brown"></button>
+                <button type="button" class="color-swatch-btn" data-color="Wine" style="--swatch-color: #881337;" title="Wine" aria-label="Filter Wine"></button>
+                <button type="button" class="color-swatch-btn" data-color="Pastel" style="--swatch-color: #fbcfe8;" title="Pastel" aria-label="Filter Pastel"></button>
+              </div>
+            </div>
+
+            <!-- Mobile Apply Button -->
+            <div class="mobile-sidebar-actions">
+              <button class="btn btn-primary btn-block" id="apply-filters-btn">Apply Filters</button>
+            </div>
+          </aside>
+
+          <!-- ========================
+               PRODUCT GRID CONTAINER
+          ========================= -->
+          <div class="shop-main">
+            <div class="products-grid" id="products-grid">
+              <!-- Rendered dynamically by script.js -->
+            </div>
+
+            <!-- Empty State Display -->
+            <div class="empty-state" id="empty-state" style="display: none;">
+              <div class="empty-state-icon"><i class="fa-regular fa-face-frown-open"></i></div>
+              <h3>No items matched your filters</h3>
+              <p>Try adjusting your search terms, removing active size or color filters, or resetting your price range.</p>
+              <button class="btn btn-primary" id="empty-reset-btn">Reset All Filters</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         7. MID-PAGE PROMOTIONAL BANNER
+    ============================================== -->
+    <section class="promo-banner-section" aria-label="Flash Promotion">
+      <div class="container">
+        <div class="promo-banner-card">
+          <div class="promo-text-content">
+            <span class="promo-tag"><i class="fa-solid fa-clock"></i> Limited Time Offer</span>
+            <h2 class="promo-heading">Mid-Season Flash Sale: Take 20% Off Your Entire Cart</h2>
+            <p class="promo-subheading">Experience premium tailoring, breathable linens, and luxury everyday wardrobe pieces. Valid until midnight Sunday.</p>
+            <div class="countdown-timer" id="countdown-timer">
+              <div class="countdown-unit">
+                <span class="unit-val" id="countdown-hours">18</span>
+                <span class="unit-lbl">Hours</span>
+              </div>
+              <span class="countdown-sep">:</span>
+              <div class="countdown-unit">
+                <span class="unit-val" id="countdown-minutes">42</span>
+                <span class="unit-lbl">Mins</span>
+              </div>
+              <span class="countdown-sep">:</span>
+              <div class="countdown-unit">
+                <span class="unit-val" id="countdown-seconds">09</span>
+                <span class="unit-lbl">Secs</span>
+              </div>
+            </div>
+            <div class="promo-actions">
+              <a href="#shop" class="btn btn-primary btn-lg" data-category="sale">
+                Claim Offer Now &bull; Code: STYLE20
+              </a>
+            </div>
+          </div>
+          <div class="promo-image-box">
+            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80" alt="Fashion flash sale models" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         8. ABOUT US SECTION
+    ============================================== -->
+    <section class="about-section" id="about" aria-label="About AURA & CO.">
+      <div class="container">
+        <div class="about-layout">
+          <div class="about-gallery">
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80" alt="AURA & CO. Design Studio" class="about-img-main" loading="lazy">
+            <div class="about-badge-card">
+              <span class="badge-num">100%</span>
+              <span class="badge-label">Fair Trade &amp; Sustainable Materials</span>
+            </div>
+          </div>
+          <div class="about-content">
+            <span class="section-tag">Our Philosophy</span>
+            <h2 class="section-title">Fashion That Speaks With Quiet Confidence</h2>
+            <p class="about-lead">Founded on the belief that everyday clothing should seamlessly bridge understated luxury, enduring comfort, and sustainable responsibility.</p>
+            <p class="about-body">At AURA &amp; CO., every garment is meticulously conceived in our design studio and tailored in partnership with generational ateliers. We prioritize certified organic cotton, recycled cashmere, zero-waste pattern drafting, and vegetable-tanned leathers that patina gracefully over years of wear.</p>
+
+            <div class="about-stats-grid">
+              <div class="stat-box">
+                <span class="stat-num">50K+</span>
+                <span class="stat-label">Happy Clients Worldwide</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-num">98%</span>
+                <span class="stat-label">Natural Fibers Used</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-num">34+</span>
+                <span class="stat-label">Artisan Partners</span>
+              </div>
+            </div>
+
+            <div class="about-cta">
+              <a href="#shop" class="btn btn-primary" data-category="all">Explore The Atelier</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         9. CUSTOMER REVIEWS / TESTIMONIALS
+    ============================================== -->
+    <section class="reviews-section" aria-label="Customer Reviews">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Real Experiences</span>
+          <h2 class="section-title">Loved by Fashion Seekers</h2>
+          <p class="section-subtitle">Over 15,000 verified five-star reviews around the globe.</p>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">"The Cashmere Trench Coat is hands-down the best outerwear purchase I have made in a decade. The tailoring is sharp, the drape is breathtaking, and the fabric breathes like a dream."</p>
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">ES</div>
+              <div>
+                <h4 class="reviewer-name">Elena Rostova</h4>
+                <span class="reviewer-city">Milan, Italy &bull; Verified Buyer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">"Outstanding customer service and remarkably fast delivery to New York. The Oxford shirts fit impeccably and survive weekly laundering without losing their shape or collar integrity."</p>
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">MR</div>
+              <div>
+                <h4 class="reviewer-name">Marcus Reed</h4>
+                <span class="reviewer-city">New York, USA &bull; Verified Buyer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">"The kids' playwear collection is exceptionally soft and built to withstand outdoor park trips without fraying. Plus, the minimalist leather crossbody bag has become my daily staple!"</p>
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">SL</div>
+              <div>
+                <h4 class="reviewer-name">Sarah Lin</h4>
+                <span class="reviewer-city">Sydney, Australia &bull; Verified Buyer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         10. CONTACT FORM & NEWSLETTER
+    ============================================== -->
+    <section class="contact-newsletter-section" id="contact" aria-label="Contact and Newsletter">
+      <div class="container">
+        <div class="contact-newsletter-grid">
+          <!-- Contact Form Box -->
+          <div class="contact-box">
+            <span class="section-tag">Get in Touch</span>
+            <h3 class="box-title">We'd Love to Hear From You</h3>
+            <p class="box-desc">Have a question regarding sizing, fabrics, or a custom order? Drop us a line and our concierge team will respond within 24 hours.</p>
+
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="form-group">
+                <label for="contact-name">Full Name *</label>
+                <input type="text" id="contact-name" class="form-control" placeholder="e.g. Julian Hayes" required>
+                <div class="field-error" id="contact-name-error"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email">Email Address *</label>
+                <input type="email" id="contact-email" class="form-control" placeholder="julian@example.com" required>
+                <div class="field-error" id="contact-email-error"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject">Topic / Subject</label>
+                <select id="contact-subject" class="form-control">
+                  <option value="sizing">Size Consultation &amp; Fit</option>
+                  <option value="order">Existing Order Status</option>
+                  <option value="returns">Exchange &amp; Returns</option>
+                  <option value="general">General Styling Inquiry</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message">Message *</label>
+                <textarea id="contact-message" class="form-control" rows="4" placeholder="How can we assist you today?" required></textarea>
+                <div class="field-error" id="contact-message-error"></div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">
+                <span>Send Inquiry</span> <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+
+          <!-- Newsletter Box -->
+          <div class="newsletter-box">
+            <div class="newsletter-card-inner">
+              <div class="newsletter-icon-ring">
+                <i class="fa-regular fa-envelope-open"></i>
+              </div>
+              <span class="section-tag text-white">Join The Inner Circle</span>
+              <h3 class="box-title text-white">Receive 15% Off Your First Atelier Order</h3>
+              <p class="newsletter-desc">Subscribe to enjoy early preview access to private sales, seasonal capsule drops, and curated editorial lookbooks directly in your inbox.</p>
+
+              <form id="newsletter-form" class="newsletter-form" novalidate>
+                <div class="newsletter-input-group">
+                  <input type="email" id="newsletter-email" class="newsletter-input" placeholder="Enter your email address" required>
+                  <button type="submit" class="newsletter-submit-btn">
+                    Subscribe <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </div>
+                <div class="field-error text-light" id="newsletter-email-error"></div>
+              </form>
+
+              <div class="newsletter-perks">
+                <div class="perk-item"><i class="fa-solid fa-check"></i> Zero spam, unsubscribe anytime</div>
+                <div class="perk-item"><i class="fa-solid fa-check"></i> VIP early access to seasonal sales</div>
+                <div class="perk-item"><i class="fa-solid fa-check"></i> Birthday styling surprise gift</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==============================================
+       11. FOOTER
+  ============================================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-top">
+      <div class="footer-grid">
+        <!-- Brand Info Column -->
+        <div class="footer-col footer-brand-col">
+          <a href="#home" class="brand-logo footer-logo">
+            <span class="logo-mark">A</span>
+            <span class="logo-text">AURA <em>&amp;</em> CO.</span>
+          </a>
+          <p class="footer-bio">An independent contemporary fashion house curating high-grade apparel, footwear, and artisanal accessories with ethical commitment.</p>
+          <div class="social-links" aria-label="Social media channels">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Shop Categories -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Shop Collection</h4>
+          <ul class="footer-links">
+            <li><a href="#shop" data-category="men">Men's Apparel</a></li>
+            <li><a href="#shop" data-category="women">Women's Collection</a></li>
+            <li><a href="#shop" data-category="kids">Kids &amp; Junior</a></li>
+            <li><a href="#shop" data-category="shoes">Shoes &amp; Boots</a></li>
+            <li><a href="#shop" data-category="accessories">Bags &amp; Accessories</a></li>
+            <li><a href="#shop" data-category="sale">Seasonal Sale (Up to 40%)</a></li>
+          </ul>
+        </div>
+
+        <!-- Client Services -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Client Services</h4>
+          <ul class="footer-links">
+            <li><a href="#contact">Contact Concierge</a></li>
+            <li><a href="#contact">Track Order</a></li>
+            <li><a href="#contact">Shipping &amp; Delivery Policy</a></li>
+            <li><a href="#contact">Returns &amp; Exchanges</a></li>
+            <li><a href="#contact">Size &amp; Fit Guide</a></li>
+            <li><a href="#contact">Gift Cards</a></li>
+          </ul>
+        </div>
+
+        <!-- Sustainability & Company -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">The Atelier</h4>
+          <ul class="footer-links">
+            <li><a href="#about">About AURA &amp; CO.</a></li>
+            <li><a href="#about">Sustainability Charter</a></li>
+            <li><a href="#about">Artisan Workshops</a></li>
+            <li><a href="#about">Press &amp; Editorial</a></li>
+            <li><a href="#about">Careers at AURA</a></li>
+            <li><a href="#contact">Store Locator</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-container">
+        <p class="copyright-text">&copy; <span id="current-year">2026</span> AURA &amp; CO. Apparel Inc. All rights reserved.</p>
+        <div class="payment-methods" aria-label="Accepted Payment Methods">
+          <span class="payment-badge" title="Visa"><i class="fa-brands fa-cc-visa"></i></span>
+          <span class="payment-badge" title="Mastercard"><i class="fa-brands fa-cc-mastercard"></i></span>
+          <span class="payment-badge" title="American Express"><i class="fa-brands fa-cc-amex"></i></span>
+          <span class="payment-badge" title="PayPal"><i class="fa-brands fa-cc-paypal"></i></span>
+          <span class="payment-badge" title="Apple Pay"><i class="fa-brands fa-cc-apple-pay"></i></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==============================================
+       12. SHOPPING CART SIDEBAR DRAWER
+  ============================================== -->
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Cart Drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-title-group">
+        <h3 class="drawer-title"><i class="fa-solid fa-bag-shopping"></i> Shopping Bag</h3>
+        <span class="drawer-item-count" id="cart-drawer-count">(0 items)</span>
+      </div>
+      <button class="drawer-close-btn" id="cart-drawer-close" aria-label="Close cart drawer">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Free Shipping Progress Tracker -->
+    <div class="shipping-progress-box">
+      <div class="shipping-progress-text" id="shipping-progress-text">
+        Add <strong>$75.00</strong> more to unlock <strong>Free Express Shipping!</strong>
+      </div>
+      <div class="progress-bar-container">
+        <div class="progress-bar-fill" id="shipping-progress-bar" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- Cart Items Scroll List -->
+    <div class="cart-items-list" id="cart-items-list">
+      <!-- Populated via JS -->
+    </div>
+
+    <!-- Empty Cart Notice -->
+    <div class="empty-cart-view" id="empty-cart-view" style="display: none;">
+      <div class="empty-cart-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+      <h4>Your Shopping Bag is Empty</h4>
+      <p>Discover our latest seasonal collections and fill your wardrobe with conscious elegance.</p>
+      <button class="btn btn-primary" id="start-shopping-btn">Explore The Store</button>
+    </div>
+
+    <!-- Cart Summary & Checkout Footer -->
+    <div class="cart-drawer-footer" id="cart-drawer-footer">
+      <!-- Promo Voucher Input -->
+      <div class="promo-input-group">
+        <input type="text" id="cart-coupon-input" placeholder="Promo code (e.g. STYLE20)" aria-label="Coupon code">
+        <button id="apply-coupon-btn" class="btn btn-dark">Apply</button>
+      </div>
+      <div class="coupon-feedback" id="coupon-feedback"></div>
+
+      <!-- Financial Calculation Rows -->
+      <div class="cart-calc-rows">
+        <div class="calc-row">
+          <span>Subtotal</span>
+          <span id="cart-subtotal">$0.00</span>
+        </div>
+        <div class="calc-row discount-row" id="cart-discount-row" style="display: none;">
+          <span>Discount (<span id="discount-label">STYLE20</span>)</span>
+          <span id="cart-discount">-$0.00</span>
+        </div>
+        <div class="calc-row">
+          <span>Estimated Shipping</span>
+          <span id="cart-shipping">$0.00</span>
+        </div>
+        <div class="calc-row total-row">
+          <span>Total</span>
+          <span id="cart-total">$0.00</span>
+        </div>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="drawer-cta-group">
+        <button class="btn btn-primary btn-block btn-lg" id="proceed-checkout-btn">
+          Checkout Now <i class="fa-solid fa-lock"></i>
+        </button>
+        <button class="btn btn-outline btn-block" id="clear-cart-btn">
+          Clear Bag
+        </button>
+      </div>
+
+      <p class="secure-checkout-tag"><i class="fa-solid fa-shield-check"></i> Bank-grade encryption &bull; 30-day money-back guarantee</p>
+    </div>
+  </aside>
+
+  <!-- ==============================================
+       13. WISHLIST SIDEBAR DRAWER
+  ============================================== -->
+  <aside class="cart-drawer wishlist-drawer" id="wishlist-drawer" aria-label="Saved Wishlist" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-title-group">
+        <h3 class="drawer-title"><i class="fa-solid fa-heart text-accent"></i> My Wishlist</h3>
+        <span class="drawer-item-count" id="wishlist-drawer-count">(0 items)</span>
+      </div>
+      <button class="drawer-close-btn" id="wishlist-drawer-close" aria-label="Close wishlist drawer">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="cart-items-list" id="wishlist-items-list">
+      <!-- Populated via JS -->
+    </div>
+
+    <!-- Empty Wishlist View -->
+    <div class="empty-cart-view" id="empty-wishlist-view" style="display: none;">
+      <div class="empty-cart-icon"><i class="fa-regular fa-heart"></i></div>
+      <h4>Your Wishlist is Empty</h4>
+      <p>Save pieces you love by tapping the heart icon on any product card.</p>
+      <button class="btn btn-primary" id="start-wishlist-shopping-btn">Discover Products</button>
+    </div>
+  </aside>
+
+  <!-- ==============================================
+       14. PRODUCT DETAIL / QUICK VIEW MODAL
+  ============================================== -->
+  <div class="modal-dialog-overlay" id="product-modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card product-modal-card">
+      <button class="modal-close-btn" id="product-modal-close" aria-label="Close product details">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-body product-modal-body" id="product-modal-content">
+        <!-- Rendered via script.js renderProductModal(product) -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================================
+       15. CHECKOUT FORM MODAL
+  ============================================== -->
+  <div class="modal-dialog-overlay" id="checkout-modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card checkout-modal-card">
+      <div class="checkout-modal-header">
+        <h3 class="checkout-title"><i class="fa-solid fa-lock text-accent"></i> Secure Checkout</h3>
+        <button class="modal-close-btn" id="checkout-modal-close" aria-label="Close checkout">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="checkout-modal-body">
+        <div class="checkout-grid">
+          <!-- Checkout Steps & Fields -->
+          <form id="checkout-form" class="checkout-form" novalidate>
+            <!-- Step 1: Customer Contact -->
+            <div class="checkout-section-block">
+              <h4 class="checkout-block-title"><span class="step-num">1</span> Contact Information</h4>
+              <div class="form-row">
+                <div class="form-group flex-1">
+                  <label for="checkout-name">Full Name *</label>
+                  <input type="text" id="checkout-name" class="form-control" placeholder="Jane Doe" required>
+                  <div class="field-error" id="checkout-name-error"></div>
+                </div>
+                <div class="form-group flex-1">
+                  <label for="checkout-email">Email Address *</label>
+                  <input type="email" id="checkout-email" class="form-control" placeholder="jane@example.com" required>
+                  <div class="field-error" id="checkout-email-error"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="checkout-phone">Phone Number *</label>
+                <input type="tel" id="checkout-phone" class="form-control" placeholder="+1 (555) 000-0000" required>
+                <div class="field-error" id="checkout-phone-error"></div>
+              </div>
+            </div>
+
+            <!-- Step 2: Shipping Address -->
+            <div class="checkout-section-block">
+              <h4 class="checkout-block-title"><span class="step-num">2</span> Shipping Address</h4>
+              <div class="form-group">
+                <label for="checkout-address">Street Address *</label>
+                <input type="text" id="checkout-address" class="form-control" placeholder="123 Luxury Ave, Apt 4B" required>
+                <div class="field-error" id="checkout-address-error"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group flex-1">
+                  <label for="checkout-city">City *</label>
+                  <input type="text" id="checkout-city" class="form-control" placeholder="New York" required>
+                  <div class="field-error" id="checkout-city-error"></div>
+                </div>
+                <div class="form-group flex-1">
+                  <label for="checkout-zip">Postal / Zip Code *</label>
+                  <input type="text" id="checkout-zip" class="form-control" placeholder="10001" required>
+                  <div class="field-error" id="checkout-zip-error"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="checkout-country">Country / Region *</label>
+                <select id="checkout-country" class="form-control">
+                  <option value="US">United States</option>
+                  <option value="UK">United Kingdom</option>
+                  <option value="CA">Canada</option>
+                  <option value="AU">Australia</option>
+                  <option value="DE">Germany</option>
+                  <option value="FR">France</option>
+                  <option value="IT">Italy</option>
+                  <option value="JP">Japan</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Step 3: Payment Method -->
+            <div class="checkout-section-block">
+              <h4 class="checkout-block-title"><span class="step-num">3</span> Payment Method</h4>
+              <div class="payment-tabs-group">
+                <label class="payment-tab active">
+                  <input type="radio" name="payment-method" value="card" checked>
+                  <span class="tab-label"><i class="fa-regular fa-credit-card"></i> Credit Card</span>
+                </label>
+                <label class="payment-tab">
+                  <input type="radio" name="payment-method" value="paypal">
+                  <span class="tab-label"><i class="fa-brands fa-paypal"></i> PayPal</span>
+                </label>
+                <label class="payment-tab">
+                  <input type="radio" name="payment-method" value="cod">
+                  <span class="tab-label"><i class="fa-solid fa-truck-ramp-box"></i> Cash on Delivery</span>
+                </label>
+              </div>
+
+              <!-- Credit Card Fields -->
+              <div class="card-inputs-panel" id="card-inputs-panel">
+                <div class="form-group">
+                  <label for="checkout-card-number">Card Number *</label>
+                  <div class="input-with-icon">
+                    <input type="text" id="checkout-card-number" class="form-control" placeholder="4532 8901 2345 6789" maxlength="19" required>
+                    <i class="fa-regular fa-credit-card input-right-icon"></i>
+                  </div>
+                  <div class="field-error" id="checkout-card-number-error"></div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group flex-1">
+                    <label for="checkout-card-exp">Expiry (MM/YY) *</label>
+                    <input type="text" id="checkout-card-exp" class="form-control" placeholder="12/28" maxlength="5" required>
+                    <div class="field-error" id="checkout-card-exp-error"></div>
+                  </div>
+                  <div class="form-group flex-1">
+                    <label for="checkout-card-cvv">Security Code (CVV) *</label>
+                    <input type="password" id="checkout-card-cvv" class="form-control" placeholder="888" maxlength="4" required>
+                    <div class="field-error" id="checkout-card-cvv-error"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PayPal notice -->
+              <div class="paypal-panel" id="paypal-panel" style="display: none;">
+                <p class="info-alert"><i class="fa-brands fa-paypal text-accent"></i> You will be securely redirected to PayPal to complete your payment.</p>
+              </div>
+
+              <!-- COD notice -->
+              <div class="cod-panel" id="cod-panel" style="display: none;">
+                <p class="info-alert"><i class="fa-solid fa-money-bill-wave text-success"></i> Pay with cash upon delivery of your order. An extra $3 handling fee applies.</p>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-lg" id="submit-order-btn">
+              <i class="fa-solid fa-lock"></i> Place Order (<span id="checkout-pay-total">$0.00</span>)
+            </button>
+          </form>
+
+          <!-- Order Preview Sidebar -->
+          <div class="checkout-summary-sidebar">
+            <h4 class="summary-title">Order Summary</h4>
+            <div class="checkout-items-preview" id="checkout-items-preview">
+              <!-- Rendered items -->
+            </div>
+            <div class="summary-totals">
+              <div class="sum-row">
+                <span>Subtotal</span>
+                <span id="co-subtotal">$0.00</span>
+              </div>
+              <div class="sum-row discount-row" id="co-discount-row" style="display: none;">
+                <span>Discount</span>
+                <span id="co-discount">-$0.00</span>
+              </div>
+              <div class="sum-row">
+                <span>Shipping</span>
+                <span id="co-shipping">$0.00</span>
+              </div>
+              <div class="sum-row sum-total">
+                <span>Total Amount</span>
+                <span id="co-total">$0.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================================
+       16. ORDER CONFIRMATION MODAL
+  ============================================== -->
+  <div class="modal-dialog-overlay" id="order-success-modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card order-success-card">
+      <div class="success-icon-wrap">
+        <i class="fa-solid fa-circle-check"></i>
+      </div>
+      <h3 class="success-title">Thank You For Your Order!</h3>
+      <p class="success-subtitle">Your order has been placed successfully and is being prepared with artisanal care.</p>
+
+      <div class="order-receipt-box">
+        <div class="receipt-row">
+          <span>Order Confirmation #:</span>
+          <strong id="receipt-order-id">#AURA-89412</strong>
+        </div>
+        <div class="receipt-row">
+          <span>Estimated Delivery:</span>
+          <strong id="receipt-delivery-date">3 - 5 Business Days</strong>
+        </div>
+        <div class="receipt-row">
+          <span>Shipping To:</span>
+          <strong id="receipt-shipping-address">Jane Doe, New York</strong>
+        </div>
+        <div class="receipt-row">
+          <span>Total Paid:</span>
+          <strong class="receipt-amount" id="receipt-total-paid">$0.00</strong>
+        </div>
+      </div>
+
+      <p class="receipt-email-note">A confirmation email along with live carrier tracking has been sent to your inbox.</p>
+
+      <button class="btn btn-primary btn-block btn-lg" id="continue-shopping-btn">
+        Continue Shopping <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- ==============================================
+       17. FLOATING BACK TO TOP BUTTON
+  ============================================== -->
+  <button class="back-to-top-btn" id="back-to-top-btn" aria-label="Back to top" title="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- ==============================================
+       18. TOAST NOTIFICATIONS CONTAINER
+  ============================================== -->
+  <div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Core JavaScript -->
+  <script src="/js/script.js"></script>
+</body>
+</html>
